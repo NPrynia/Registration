@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
-
+using Registration;
 namespace Authorization.Windows
 {
     /// <summary>
@@ -23,6 +23,10 @@ namespace Authorization.Windows
         public RegistrWindow()
         {
             InitializeComponent();
+            
+            Paths.PathUsers = @"Accounts\Users.txt";
+            Paths.Pathsignup = @"Accounts\signup.txt";
+
             Captch.Text = Capthacs.Capcha();
         }
         private void btnCapth_Click(object sender, RoutedEventArgs e)
@@ -61,8 +65,9 @@ namespace Authorization.Windows
                 {
                     MessageBox.Show("Введите пароль");
                 }
-                using (StreamWriter sw = new StreamWriter(@"C:\Users\mrbox\OneDrive\Рабочий стол\signin.txt", true))
+                using (StreamWriter sw = new StreamWriter(Paths.PathUsers, true))
                 {
+                    MessageBox.Show("Вы зарегистрировались");
                     sw.Write(txtLog.Text + ";" + txtName.Text + ";" + txtNumber.Text + ";" + txtPass.Password + "\n");
                     sw.Close();
                 }    

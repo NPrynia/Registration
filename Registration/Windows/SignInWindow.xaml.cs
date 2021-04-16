@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Authorization;
+using Registration;
 namespace Authorization
 {
    
@@ -22,16 +22,19 @@ namespace Authorization
     /// </summary>
     public partial class SignInWindow : Window
     {
+        
+        
         int a = 0;
         Person p = new Person();
         List<Person> PrsList = new List<Person>();
         public SignInWindow()
         {
             InitializeComponent();
-            string path= @"C:\Users\mrbox\OneDrive\Рабочий стол\signin.txt";
-            using (StreamReader sr = new StreamReader(path))
+           
+            
+            using (StreamReader sr = new StreamReader(Paths.PathUsers))
             {
-                for (int i = 0; i < File.ReadLines(path).Count(); i++)
+                for (int i = 0; i < File.ReadLines(Paths.PathUsers).Count(); i++)
                 {
                     int count = 0;
                     count = count + 1;
@@ -48,7 +51,7 @@ namespace Authorization
                 }
             }
             
-            using (StreamReader sr = new StreamReader(@"C:\Users\mrbox\OneDrive\Рабочий стол\signup.txt"))
+            using (StreamReader sr = new StreamReader(Paths.Pathsignup))
             {
                 txtLog.Text = sr.ReadLine();
                 txtPass.Password = sr.ReadLine();
@@ -76,7 +79,7 @@ namespace Authorization
                 {
                     if (boxSave.IsChecked == true)
                     {
-                        using (StreamWriter sw = new StreamWriter(@"C:\Users\mrbox\OneDrive\Рабочий стол\signup.txt"))
+                        using (StreamWriter sw = new StreamWriter(Paths.Pathsignup))
                         {
                             string log = txtLog.Text;
                             string pas = txtPass.Password;                                                                                                                                                                                                                                       
@@ -85,7 +88,7 @@ namespace Authorization
                         }
 
                     }
-                    MainWindow mainWindowew = new MainWindow(user);
+                    WindowMain mainWindowew = new WindowMain(user);
                     MessageBox.Show("Добро пожаловать");
                     this.Close();
                     mainWindowew.ShowDialog();

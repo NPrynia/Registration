@@ -1,0 +1,87 @@
+﻿<Window x:Class="Game.Window.SaveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Game.Window"
+        mc:Ignorable="d"
+        Title="SaveWindow" Height="800" Width="1500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="685*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Image Margin="0,1,2,1" Source="/image/Load.jpg" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="8"/>
+
+        <Button
+             x:Name="btnBack"
+            Grid.Row="6"
+            Width="200"
+            Height="50"
+            FontSize="35"
+            Content="Назад"
+            FontFamily="Monotype Corsiva"        
+            Click="btnBack_Click"
+            />
+
+        <Button          
+            Grid.Column="1"
+            Grid.Row="2"
+            Width="400"
+            Height="75"
+            Foreground="DarkSlateGray"
+            Content="Слот 1"
+            FontSize="50" 
+            FontFamily="Monotype Corsiva"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="-200 0 0 0" 
+            Opacity="0.9"
+            />
+        <Button
+           
+            Grid.Column="1"
+            Grid.Row="4"
+            Width="400"
+            Height="75"
+            Foreground="DarkSlateGray"
+            Content="Слот 3"
+            FontSize="50" 
+            FontFamily="Monotype Corsiva"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="-200 0 0 0"
+            Opacity="0.9"
+            
+            />
+        <Button
+           
+            Grid.Column="1"
+            Grid.Row="3"
+            Width="400"
+            Height="75"
+            Foreground="DarkSlateGray"
+            Content="Слот 2"
+            FontSize="50" 
+            FontFamily="Monotype Corsiva"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="-200 0 0 0"
+            Opacity="0.9"
+            
+            />
+
+
+
+    </Grid>
+</Window>

@@ -50,8 +50,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -71,7 +80,40 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Capthacs.cs" />
-    <Compile Include="MyTable.cs" />
+    <Compile Include="EF\Ent.cs" />
+    <Compile Include="EF\Gender.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Page\LoadPage.xaml.cs">
       <DependentUpon>LoadPage.xaml</DependentUpon>
     </Compile>
@@ -132,9 +174,9 @@
     <Compile Include="Page\TitleScrin.xaml.cs">
       <DependentUpon>TitleScrin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Path.cs" />
+    <Compile Include="Games\RedHat\Path.cs" />
     <Compile Include="Paths.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Windows\WindowGames.xaml.cs">
       <DependentUpon>WindowGames.xaml</DependentUpon>
     </Compile>
@@ -151,17 +193,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Window\GameWindow.xaml.cs">
+    <Compile Include="Games\RedHat\Window\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window\LoadWindow.xaml.cs">
+    <Compile Include="Games\RedHat\Window\LoadWindow.xaml.cs">
       <DependentUpon>LoadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window\MenuWindow.xaml.cs">
+    <Compile Include="Games\RedHat\Window\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window\SaveWindow.xaml.cs">
+    <Compile Include="Games\RedHat\Window\SaveWindow.xaml.cs">
       <DependentUpon>SaveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowUsers.xaml.cs">
+      <DependentUpon>WindowUsers.xaml</DependentUpon>
     </Compile>
     <Page Include="Page\LoadPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -259,21 +304,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Window\GameWindow.xaml">
+    <Page Include="Games\RedHat\Window\GameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Window\LoadWindow.xaml">
+    <Page Include="Games\RedHat\Window\LoadWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Window\MenuWindow.xaml">
+    <Page Include="Games\RedHat\Window\MenuWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Window\SaveWindow.xaml">
+    <Page Include="Games\RedHat\Window\SaveWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\WindowUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +343,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="EF\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -307,53 +363,63 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>signup.txt</LastGenOutput>
     </Content>
-    <Content Include="Save1.tt">
+    <Content Include="EF\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Games\RedHat\Save1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Save1.txt</LastGenOutput>
     </Content>
-    <Resource Include="Save1.txt">
+    <Resource Include="Games\RedHat\Save1.txt">
       <DependentUpon>Save1.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Resource>
-    <Content Include="Save.tt">
+    <Content Include="Games\RedHat\Save.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Save.txt</LastGenOutput>
     </Content>
-    <Resource Include="Save.txt">
+    <Resource Include="Games\RedHat\Save.txt">
       <DependentUpon>Save.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Resource>
-    <Content Include="sounds\Button.wav" />
-    <Content Include="sounds\forest.wav" />
-    <Content Include="sounds\Krik.wav" />
-    <Content Include="sounds\music.wav" />
-    <Content Include="sounds\MusicSad.wav" />
-    <Resource Include="image\WalkGirl.jpg" />
-    <Resource Include="image\w512h5121380984637delete1.png" />
-    <Resource Include="image\VolkLEs.jpg" />
-    <Resource Include="image\Volk.jpg" />
-    <Resource Include="image\SaveImg.png" />
-    <Resource Include="image\Mother.jpg" />
-    <Resource Include="image\Menu.png" />
-    <Resource Include="image\Load.jpg" />
-    <Resource Include="image\InMaHome.jpg" />
-    <Resource Include="image\InHomeBa.png" />
-    <Resource Include="image\InForest.jpg" />
-    <Resource Include="image\HomeMa.png" />
-    <Resource Include="image\GrandMaHome.jpg" />
-    <Resource Include="image\GrandMa.jpg" />
-    <Resource Include="image\GirlInBa.jpg" />
-    <Resource Include="image\GirlAva.jpg" />
-    <Resource Include="image\Girl.png" />
-    <Resource Include="image\End.jpg" />
-    <Resource Include="image\Eat.jpg" />
-    <Resource Include="image\DvorMa.jpg" />
-    <Resource Include="image\DisketLOad.png" />
-    <Resource Include="image\1200px-Anonymous.svg.png" />
-    <Resource Include="image\118492.jpg" />
-    <Resource Include="image\04.jpg" />
+    <Content Include="Games\RedHat\sounds\Button.wav" />
+    <Content Include="Games\RedHat\sounds\forest.wav" />
+    <Content Include="Games\RedHat\sounds\Krik.wav" />
+    <Content Include="Games\RedHat\sounds\music.wav" />
+    <Content Include="Games\RedHat\sounds\MusicSad.wav" />
+    <Resource Include="Games\RedHat\image\WalkGirl.jpg" />
+    <Resource Include="Games\RedHat\image\w512h5121380984637delete1.png" />
+    <Resource Include="Games\RedHat\image\VolkLEs.jpg" />
+    <Resource Include="Games\RedHat\image\Volk.jpg" />
+    <Resource Include="Games\RedHat\image\SaveImg.png" />
+    <Resource Include="Games\RedHat\image\Mother.jpg" />
+    <Resource Include="Games\RedHat\image\Menu.png" />
+    <Resource Include="Games\RedHat\image\Load.jpg" />
+    <Resource Include="Games\RedHat\image\InMaHome.jpg" />
+    <Resource Include="Games\RedHat\image\InHomeBa.png" />
+    <Resource Include="Games\RedHat\image\InForest.jpg" />
+    <Resource Include="Games\RedHat\image\HomeMa.png" />
+    <Resource Include="Games\RedHat\image\GrandMaHome.jpg" />
+    <Resource Include="Games\RedHat\image\GrandMa.jpg" />
+    <Resource Include="Games\RedHat\image\GirlInBa.jpg" />
+    <Resource Include="Games\RedHat\image\GirlAva.jpg" />
+    <Resource Include="Games\RedHat\image\Girl.png" />
+    <Resource Include="Games\RedHat\image\End.jpg" />
+    <Resource Include="Games\RedHat\image\Eat.jpg" />
+    <Resource Include="Games\RedHat\image\DvorMa.jpg" />
+    <Resource Include="Games\RedHat\image\DisketLOad.png" />
+    <Resource Include="Games\RedHat\image\1200px-Anonymous.svg.png" />
+    <Resource Include="Games\RedHat\image\118492.jpg" />
+    <Resource Include="Games\RedHat\image\04.jpg" />
     <Resource Include="Accounts\signup.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -372,9 +438,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Class\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

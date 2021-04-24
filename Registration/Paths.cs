@@ -26,7 +26,7 @@ namespace Registration
             get { return pathUsers; }
             set { pathUsers = value; }
         }
-        private static string pathsignup = "";
+        private static string pathsignup = ""; 
         public static string Pathsignup
         {
 

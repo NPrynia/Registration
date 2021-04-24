@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Registration;
+using Registration.EF;
+
 namespace Authorization
 {
    
@@ -25,31 +27,12 @@ namespace Authorization
         
         
         int a = 0;
-        Person p = new Person();
-        List<Person> PrsList = new List<Person>();
+       
         public SignInWindow()
         {
             InitializeComponent();
            
-            
-            using (StreamReader sr = new StreamReader(Paths.PathUsers))
-            {
-                for (int i = 0; i < File.ReadLines(Paths.PathUsers).Count(); i++)
-                {
-                    int count = 0;
-                    count = count + 1;
-                    string str = sr.ReadLine();
-                    string[] line = str.Split(';');
-                    PrsList.Add(new Person()
-                    {
-                        Id = count ,
-                        Login = line[0],
-                        Name = line[1],
-                        Phone = line[2],
-                        Password = line[3],                     
-                    });
-                }
-            }
+           
             
             using (StreamReader sr = new StreamReader(Paths.Pathsignup))
             {
@@ -74,9 +57,14 @@ namespace Authorization
             {
                 
                 a++;
-                var user = PrsList.Where(p => p.Login == txtLog.Text && p.Password == txtPass.Password).FirstOrDefault();
+
+                
+                var user = Ent.Context.Users.ToList().
+                    Where(p => p.Login == txtLog.Text && p.Password == txtPass.Password).FirstOrDefault();
                 if (user != null)
                 {
+                    
+
                     if (boxSave.IsChecked == true)
                     {
                         using (StreamWriter sw = new StreamWriter(Paths.Pathsignup))
@@ -88,7 +76,18 @@ namespace Authorization
                         }
 
                     }
-                    WindowMain mainWindowew = new WindowMain(user);
+                    WindowMain mainWindowew = new WindowMain();
+                    switch (user.IdRole)
+                    {
+                        case 1:
+                            mainWindowew.btnUsers.Visibility = 0;
+                            break;
+                        case 2:
+                            
+                            break;
+
+                    }ы
+                   
                     MessageBox.Show("Добро пожаловать");
                     this.Close();
                     mainWindowew.ShowDialog();

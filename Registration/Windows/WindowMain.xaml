@@ -25,12 +25,6 @@
             Grid.ColumnSpan="2"
             HorizontalAlignment="Center"            
             ></TextBlock>
-        <DataGrid
-            x:Name="gridTable"
-            Grid.Row="4"
-            Grid.Column="1"
-           Loaded="gridTable_Loaded"
-            ></DataGrid>
         <TextBlock
             Text="Name:"
             FontSize="20"
@@ -89,6 +83,16 @@
             Background="Aqua"
             Click="btnGame_Click"
             ></Button>
-        
+        <Button
+            x:Name="btnUsers"
+            Grid.Row="4"
+            VerticalAlignment="Top"
+            Height="50"
+            Visibility="Hidden"
+            Content="Все пользователи"
+            Background="Aqua"
+            Click="btnUsers_Click"
+            ></Button>
+
     </Grid>
 </Window>

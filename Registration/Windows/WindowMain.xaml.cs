@@ -15,6 +15,7 @@ using System.IO;
 using Registration;
 using Game;
 using Registration.Windows;
+using Registration.EF;
 
 
 namespace Authorization
@@ -24,44 +25,26 @@ namespace Authorization
     /// </summary>
     public partial class WindowMain : Window
     {
-        int id;
-        string name;
-        string pass;
-        string phone;
-        string login;
-        public WindowMain(Person person)
+        
+        public WindowMain()
         {
             InitializeComponent();
-            txtLog.Text = person.Name;
-            txtPas.Text = person.Password;
-            txtPhone.Text = person.Phone;
-         name = person.Name;
-         pass = person.Password;
-         phone = person.Phone;
-         id = person.Id;
-         login = person.Login;
-         Paths.IdGame = (login);
-
-
-
-    }
-
-        private void gridTable_Loaded(object sender, RoutedEventArgs e)
-        {
+            var user = Ent.Context.Users.ToList().FirstOrDefault();
             
-            List<MyTable> result = new List<MyTable>(3);
-            result.Add(new MyTable(id, name, login, pass, phone));
-
-            gridTable.ItemsSource = result;
+            
+            
         }
-
         private void btnGame_Click(object sender, RoutedEventArgs e)
         {
             WindowGames windowGames = new WindowGames();
             this.Close();
             windowGames.Show();
-          
+        }
 
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            WindowUsers windowUsers = new WindowUsers();
+            windowUsers.Show();
 
         }
     }

@@ -26,13 +26,13 @@
 
 
         <Image Grid.ColumnSpan="3"
-               Source="/image/InHomeBa.png"
+               Source="/Game/RedHat/image/InHomeBa.png"
                Stretch="Fill" 
                Grid.RowSpan="5" />
 
         <Image        
             Grid.Row="4"
-            Source="/image/Volk.jpg"
+            Source="/Game/RedHat/image/Volk.jpg"
             Stretch="Fill" 
              />
 
@@ -192,13 +192,13 @@
             Width="81"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-          Source="/image/04.jpg" 
+          Source="/Game/RedHat/image/04.jpg" 
             Stretch="Fill" Height="120"
           />
-        <Image Source="/image/Menu.png" Margin="-3,0,117.4,38" />
+        <Image Source="/Game/RedHat/image/Menu.png" Margin="-3,0,117.4,38" />
 
 
-        <Image Source="/image/SaveImg.png"
+        <Image Source="/Game/RedHat/image/SaveImg.png"
        
        
        Grid.Row="0"
@@ -271,7 +271,7 @@
              Grid.RowSpan="2"
             Click="btnCLickEnd_Click"
             />
-        
+
 
     </Grid>
 </Page>

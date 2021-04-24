@@ -114,67 +114,67 @@
     <Compile Include="EF\Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Page\LoadPage.xaml.cs">
+    <Compile Include="Game\RedHat\Page\LoadPage.xaml.cs">
       <DependentUpon>LoadPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page1.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page10.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page10.xaml.cs">
       <DependentUpon>Page10.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page11.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page11.xaml.cs">
       <DependentUpon>Page11.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page12.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page12.xaml.cs">
       <DependentUpon>Page12.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page13.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page13.xaml.cs">
       <DependentUpon>Page13.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page14.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page14.xaml.cs">
       <DependentUpon>Page14.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page15.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page15.xaml.cs">
       <DependentUpon>Page15.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page16.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page16.xaml.cs">
       <DependentUpon>Page16.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page17.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page17.xaml.cs">
       <DependentUpon>Page17.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page2.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page3.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page3.xaml.cs">
       <DependentUpon>Page3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page4.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page4.xaml.cs">
       <DependentUpon>Page4.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page5.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page5.xaml.cs">
       <DependentUpon>Page5.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page6.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page6.xaml.cs">
       <DependentUpon>Page6.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page7.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page7.xaml.cs">
       <DependentUpon>Page7.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page8.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page8.xaml.cs">
       <DependentUpon>Page8.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Page9.xaml.cs">
+    <Compile Include="Game\RedHat\Page\Page9.xaml.cs">
       <DependentUpon>Page9.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\PageEnd.xaml.cs">
+    <Compile Include="Game\RedHat\Page\PageEnd.xaml.cs">
       <DependentUpon>PageEnd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\TitleScrin.xaml.cs">
+    <Compile Include="Game\RedHat\Page\TitleScrin.xaml.cs">
       <DependentUpon>TitleScrin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Games\RedHat\Path.cs" />
+    <Compile Include="Game\RedHat\Path.cs" />
     <Compile Include="Paths.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Windows\WindowGames.xaml.cs">
@@ -193,98 +193,98 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Games\RedHat\Window\GameWindow.xaml.cs">
+    <Compile Include="Game\RedHat\Window\GameWindow.xaml.cs">
       <DependentUpon>GameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Games\RedHat\Window\LoadWindow.xaml.cs">
+    <Compile Include="Game\RedHat\Window\LoadWindow.xaml.cs">
       <DependentUpon>LoadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Games\RedHat\Window\MenuWindow.xaml.cs">
+    <Compile Include="Game\RedHat\Window\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Games\RedHat\Window\SaveWindow.xaml.cs">
+    <Compile Include="Game\RedHat\Window\SaveWindow.xaml.cs">
       <DependentUpon>SaveWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowUsers.xaml.cs">
       <DependentUpon>WindowUsers.xaml</DependentUpon>
     </Compile>
-    <Page Include="Page\LoadPage.xaml">
+    <Page Include="Game\RedHat\Page\LoadPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page1.xaml">
+    <Page Include="Game\RedHat\Page\Page1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page10.xaml">
+    <Page Include="Game\RedHat\Page\Page10.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page11.xaml">
+    <Page Include="Game\RedHat\Page\Page11.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page12.xaml">
+    <Page Include="Game\RedHat\Page\Page12.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page13.xaml">
+    <Page Include="Game\RedHat\Page\Page13.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page14.xaml">
+    <Page Include="Game\RedHat\Page\Page14.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page15.xaml">
+    <Page Include="Game\RedHat\Page\Page15.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page16.xaml">
+    <Page Include="Game\RedHat\Page\Page16.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page17.xaml">
+    <Page Include="Game\RedHat\Page\Page17.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page2.xaml">
+    <Page Include="Game\RedHat\Page\Page2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page3.xaml">
+    <Page Include="Game\RedHat\Page\Page3.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page4.xaml">
+    <Page Include="Game\RedHat\Page\Page4.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page5.xaml">
+    <Page Include="Game\RedHat\Page\Page5.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page6.xaml">
+    <Page Include="Game\RedHat\Page\Page6.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page7.xaml">
+    <Page Include="Game\RedHat\Page\Page7.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page8.xaml">
+    <Page Include="Game\RedHat\Page\Page8.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\Page9.xaml">
+    <Page Include="Game\RedHat\Page\Page9.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\PageEnd.xaml">
+    <Page Include="Game\RedHat\Page\PageEnd.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Page\TitleScrin.xaml">
+    <Page Include="Game\RedHat\Page\TitleScrin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -304,19 +304,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Games\RedHat\Window\GameWindow.xaml">
+    <Page Include="Game\RedHat\Window\GameWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Games\RedHat\Window\LoadWindow.xaml">
+    <Page Include="Game\RedHat\Window\LoadWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Games\RedHat\Window\MenuWindow.xaml">
+    <Page Include="Game\RedHat\Window\MenuWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Games\RedHat\Window\SaveWindow.xaml">
+    <Page Include="Game\RedHat\Window\SaveWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -373,53 +373,53 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Games\RedHat\Save1.tt">
+    <Content Include="Game\RedHat\Save1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Save1.txt</LastGenOutput>
     </Content>
-    <Resource Include="Games\RedHat\Save1.txt">
+    <Resource Include="Game\RedHat\Save1.txt">
       <DependentUpon>Save1.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Resource>
-    <Content Include="Games\RedHat\Save.tt">
+    <Content Include="Game\RedHat\Save.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Save.txt</LastGenOutput>
     </Content>
-    <Resource Include="Games\RedHat\Save.txt">
+    <Resource Include="Game\RedHat\Save.txt">
       <DependentUpon>Save.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Resource>
-    <Content Include="Games\RedHat\sounds\Button.wav" />
-    <Content Include="Games\RedHat\sounds\forest.wav" />
-    <Content Include="Games\RedHat\sounds\Krik.wav" />
-    <Content Include="Games\RedHat\sounds\music.wav" />
-    <Content Include="Games\RedHat\sounds\MusicSad.wav" />
-    <Resource Include="Games\RedHat\image\WalkGirl.jpg" />
-    <Resource Include="Games\RedHat\image\w512h5121380984637delete1.png" />
-    <Resource Include="Games\RedHat\image\VolkLEs.jpg" />
-    <Resource Include="Games\RedHat\image\Volk.jpg" />
-    <Resource Include="Games\RedHat\image\SaveImg.png" />
-    <Resource Include="Games\RedHat\image\Mother.jpg" />
-    <Resource Include="Games\RedHat\image\Menu.png" />
-    <Resource Include="Games\RedHat\image\Load.jpg" />
-    <Resource Include="Games\RedHat\image\InMaHome.jpg" />
-    <Resource Include="Games\RedHat\image\InHomeBa.png" />
-    <Resource Include="Games\RedHat\image\InForest.jpg" />
-    <Resource Include="Games\RedHat\image\HomeMa.png" />
-    <Resource Include="Games\RedHat\image\GrandMaHome.jpg" />
-    <Resource Include="Games\RedHat\image\GrandMa.jpg" />
-    <Resource Include="Games\RedHat\image\GirlInBa.jpg" />
-    <Resource Include="Games\RedHat\image\GirlAva.jpg" />
-    <Resource Include="Games\RedHat\image\Girl.png" />
-    <Resource Include="Games\RedHat\image\End.jpg" />
-    <Resource Include="Games\RedHat\image\Eat.jpg" />
-    <Resource Include="Games\RedHat\image\DvorMa.jpg" />
-    <Resource Include="Games\RedHat\image\DisketLOad.png" />
-    <Resource Include="Games\RedHat\image\1200px-Anonymous.svg.png" />
-    <Resource Include="Games\RedHat\image\118492.jpg" />
-    <Resource Include="Games\RedHat\image\04.jpg" />
+    <Content Include="Game\RedHat\sounds\Button.wav" />
+    <Content Include="Game\RedHat\sounds\forest.wav" />
+    <Content Include="Game\RedHat\sounds\Krik.wav" />
+    <Content Include="Game\RedHat\sounds\music.wav" />
+    <Content Include="Game\RedHat\sounds\MusicSad.wav" />
+    <Resource Include="Game\RedHat\image\WalkGirl.jpg" />
+    <Resource Include="Game\RedHat\image\w512h5121380984637delete1.png" />
+    <Resource Include="Game\RedHat\image\VolkLEs.jpg" />
+    <Resource Include="Game\RedHat\image\Volk.jpg" />
+    <Resource Include="Game\RedHat\image\SaveImg.png" />
+    <Resource Include="Game\RedHat\image\Mother.jpg" />
+    <Resource Include="Game\RedHat\image\Menu.png" />
+    <Resource Include="Game\RedHat\image\Load.jpg" />
+    <Resource Include="Game\RedHat\image\InMaHome.jpg" />
+    <Resource Include="Game\RedHat\image\InHomeBa.png" />
+    <Resource Include="Game\RedHat\image\InForest.jpg" />
+    <Resource Include="Game\RedHat\image\HomeMa.png" />
+    <Resource Include="Game\RedHat\image\GrandMaHome.jpg" />
+    <Resource Include="Game\RedHat\image\GrandMa.jpg" />
+    <Resource Include="Game\RedHat\image\GirlInBa.jpg" />
+    <Resource Include="Game\RedHat\image\GirlAva.jpg" />
+    <Resource Include="Game\RedHat\image\Girl.png" />
+    <Resource Include="Game\RedHat\image\End.jpg" />
+    <Resource Include="Game\RedHat\image\Eat.jpg" />
+    <Resource Include="Game\RedHat\image\DvorMa.jpg" />
+    <Resource Include="Game\RedHat\image\DisketLOad.png" />
+    <Resource Include="Game\RedHat\image\1200px-Anonymous.svg.png" />
+    <Resource Include="Game\RedHat\image\118492.jpg" />
+    <Resource Include="Game\RedHat\image\04.jpg" />
     <Resource Include="Accounts\signup.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

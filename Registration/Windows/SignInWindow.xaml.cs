@@ -86,7 +86,7 @@ namespace Authorization
                             
                             break;
 
-                    }ы
+                    }
                    
                     MessageBox.Show("Добро пожаловать");
                     this.Close();

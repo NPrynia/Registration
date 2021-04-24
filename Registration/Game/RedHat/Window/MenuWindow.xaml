@@ -20,7 +20,7 @@
 
         </Grid.ColumnDefinitions>
         <Image          
-            Source="/image/118492.jpg" 
+            Source="/Game/RedHat/image/118492.jpg" 
             Stretch="Fill"
             Grid.RowSpan="4"
             Grid.ColumnSpan="3"

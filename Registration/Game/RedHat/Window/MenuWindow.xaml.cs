@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using Game.Window;
 using System.IO;
 using Registration;
-using Authorization;
 
 namespace Game
 {
@@ -27,20 +26,16 @@ namespace Game
         public MenuWindow()
         {
             InitializeComponent();
-            
-            if (Paths.IdGame == "Admin")
-            {
-                Path.PathSave = @"Save.txt";
-            }
-            if (Paths.IdGame == "Susik")
-            {
-                Path.PathSave = @"Save1.txt";
-            }
+
+
+            Path.PathSave = @"Game/RedHat/Save.txt";
+
+
 
         }
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\Button.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\Button.wav");
 
             player.Play();
             GameWindow gameWindow = new GameWindow();
@@ -51,7 +46,7 @@ namespace Game
 
         private void btnLoad_Click(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\Button.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\Button.wav");
             player.Play();
 
             using (StreamWriter sr = new StreamWriter(Path.PathSave, false))
@@ -68,7 +63,7 @@ namespace Game
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            
+
 
             this.Close();
         }

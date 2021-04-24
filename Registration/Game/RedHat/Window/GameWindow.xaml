@@ -9,7 +9,7 @@
         MaxWidth="1500"
         MinHeight="800"
         MinWidth="1500"
-        Title="Red hat" Height="800" Width="1500">
+        Title="GameWindow" Height="800" Width="1500">
     <Grid >
 
         <Grid.ColumnDefinitions>
@@ -38,10 +38,10 @@
             Grid.ColumnSpan="20"
             
           ></Frame>
-        <Image Source="/image/w512h5121380984637delete1.png" Margin="1455,0,0,738" />
-       
+        <Image Source="/Game/RedHat//image/w512h5121380984637delete1.png" Margin="1455,0,0,738" />
 
-      
+
+
         <Button x:Name="Menu"
                 Margin="19,16,0,54"
                 Width="42"

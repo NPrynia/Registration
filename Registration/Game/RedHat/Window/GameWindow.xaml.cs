@@ -20,7 +20,7 @@ namespace Game.Window
     /// Логика взаимодействия для GameWindow.xaml
     /// </summary>
     /// 
-    
+
     public partial class GameWindow
     {
         public GameWindow()
@@ -42,7 +42,7 @@ namespace Game.Window
 
 
                 string a = sr.ReadLine();
-           
+
                 int num = Convert.ToInt32(a);
 
                 if (num == 1)
@@ -121,16 +121,16 @@ namespace Game.Window
                     //FrameMain.Navigate(new TitleScrin());
                 }
             }
-           
+
         }
 
-        
+
 
 
 
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\Button.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\Button.wav");
             player.Play();
             MenuWindow main = new MenuWindow();
             this.Close();

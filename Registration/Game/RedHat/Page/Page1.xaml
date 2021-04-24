@@ -1,12 +1,12 @@
-﻿<Page x:Class="Game.Page.Page14"
+﻿<Page x:Class="Game.Page.Page1"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Game.Page"
       mc:Ignorable="d" 
-      d:DesignHeight="775" d:DesignWidth="1487"
-      Title="Page14">
+      Height="775" Width="1487"
+      Title="Page1">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -26,19 +26,12 @@
 
 
         <Image Grid.ColumnSpan="3"
-               Source="/image/GirlInBa.jpg"
+               Source="/Game/RedHat/image/HomeMa.png"
                Stretch="Fill" 
                Grid.RowSpan="5" />
 
-        <Image        
-            Grid.Row="4"
-            Source="/image/Volk.jpg"
-            Stretch="Fill" 
-             />
-
-
         <Border
-            Grid.Column="1"
+            Grid.Column="0"
             Background="Gray"          
             Opacity="0.8"
             Grid.Row="4"
@@ -49,12 +42,11 @@
             Grid.Column="1"
             Height="60"
             Background="Gray"          
-            Opacity="0.8"                    
+            Opacity="0.8"
+                    
             />
-
-
         <TextBlock
-            Text="Волк:"
+            Text="Автор:"
             FontSize="35"
             VerticalAlignment="Center"
             Grid.Column="1" 
@@ -62,25 +54,35 @@
             FontFamily="Monotype Corsiva" 
             Height="40" 
             Grid.Row="3"
-            Width="120"   
+            Width="100" 
+            
             ></TextBlock>
-        <TextBlock 
+        <TextBlock
+            Text="   Жила-была в одной деревне девочка красоты невиданной: мать любила её без памяти, а бабушка и того больше.
+Сшила как-то раз бабушка любимой внучке шапочку красного цвета и так сильно она девочке понравилась, что и снимать не хотелось. Всюду ходила она в своей шапочке, потому и стали называть её Красной Шапочкой."
             Grid.Row="4"
             Grid.ColumnSpan="2"
             Grid.Column="1"
             Width="1260"
             TextWrapping="Wrap"
-            FontSize="40"
+            FontSize="34"
             FontFamily="Monotype Corsiva"
-            Text="— Кто там такой?"
-            ></TextBlock>
+                       
+            />
+        <Image        
+            Grid.Row="4"
+            Source="/Game/RedHat/image/1200px-Anonymous.svg.png"
+            Stretch="Fill" 
+             />
         <Button
             x:Name="BtnCLick"
             Opacity="0" 
             Grid.RowSpan="5"
             Grid.ColumnSpan="3"
-            Click="btnCLick_Click"
+            Click="Button_Click" 
             />
+
+
         <Image 
           Grid.Column="0"
           Grid.RowSpan="2"
@@ -88,13 +90,13 @@
             Width="81"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-          Source="/image/04.jpg" 
+          Source="/Game/RedHat/image/04.jpg" 
             Stretch="Fill" Height="120"
           />
-        <Image Source="/image/Menu.png" Margin="-3,0,117.4,38" />
+        <Image Source="/Game/RedHat/image/Menu.png" Margin="-3,0,117.4,38" />
 
 
-        <Image Source="/image/SaveImg.png"
+        <Image Source="/Game/RedHat/image/SaveImg.png"
        
        
        Grid.Row="0"
@@ -123,5 +125,11 @@
                 Click="btnSave_Click"
                 
             />
+
+
+
+
+
+
     </Grid>
 </Page>

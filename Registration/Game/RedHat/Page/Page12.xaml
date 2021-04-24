@@ -1,4 +1,4 @@
-﻿<Page x:Class="Game.Page.Page9"
+﻿<Page x:Class="Game.Page.Page12"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Game.Page"
       mc:Ignorable="d" 
       d:DesignHeight="775" d:DesignWidth="1487"
-      Title="Page9">
+      Title="Page12">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -26,13 +26,13 @@
 
 
         <Image Grid.ColumnSpan="3"
-               Source="/image/InForest.jpg"
+               Source="/Game/RedHat/image/GrandMaHome.jpg"
                Stretch="Fill" 
                Grid.RowSpan="5" />
 
         <Image        
             Grid.Row="4"
-            Source="/image/Volk.jpg"
+            Source="/Game/RedHat/image/Volk.jpg"
             Stretch="Fill" 
              />
 
@@ -72,14 +72,14 @@
             TextWrapping="Wrap"
             FontSize="40"
             FontFamily="Monotype Corsiva"
-            Text="— Знаешь что, пойду-ка и я к бабушке.Я пойду этой дорогой, а ты ступай той: посмотрим, кто из нас скорее дойдёт. "
+            Text="— Это я, внучка ваша, Красная Шапочка. Пирожок несу, да горшочек масла: матушка прислала."
             ></TextBlock>
         <Button
             x:Name="BtnCLick"
             Opacity="0" 
             Grid.RowSpan="5"
             Grid.ColumnSpan="3"
-            Click="BtnCLick_Click"
+            Click="btnClick_Click"
             />
         <Image 
           Grid.Column="0"
@@ -88,13 +88,13 @@
             Width="81"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-          Source="/image/04.jpg" 
+          Source="/Game/RedHat/image/04.jpg" 
             Stretch="Fill" Height="120"
           />
-        <Image Source="/image/Menu.png" Margin="-3,0,117.4,38" />
+        <Image Source="/Game/RedHat/image/Menu.png" Margin="-3,0,117.4,38" />
 
 
-        <Image Source="/image/SaveImg.png"
+        <Image Source="/Game/RedHat/image/SaveImg.png"
        
        
        Grid.Row="0"

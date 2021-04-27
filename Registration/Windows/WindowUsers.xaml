@@ -7,7 +7,31 @@
         mc:Ignorable="d"
         Title="WindowUsers" Height="450" Width="800">
     <Grid Background="Bisque">
-        
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="721*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <ListView
+            Name="LvUsers" 
+            Grid.Column="2"
+            >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Фамилия" Width="200" DisplayMemberBinding="{Binding FName}"/>
+                    <GridViewColumn Header="Gender" Width="100" DisplayMemberBinding="{Binding Gender.Gender1}"/>
+                    <GridViewColumn Header="Role" Width="100" DisplayMemberBinding="{Binding Role.Role1}"/>
+                    <GridViewColumn Header="Login" Width="200" DisplayMemberBinding="{Binding Login}"/>
+                    <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Password}"/>
+                    <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Phone}"/>
+                </GridView>
+
+            </ListView.View>
+
+
+        </ListView>
+
     </Grid>
 </Window>

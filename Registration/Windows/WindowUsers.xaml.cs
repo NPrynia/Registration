@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Registration.EF;
 
 namespace Registration.Windows
 {
@@ -22,6 +23,7 @@ namespace Registration.Windows
         public WindowUsers()
         {
             InitializeComponent();
+            LvUsers.ItemsSource = Ent.Context.Users.ToList();
         }
     }
 }

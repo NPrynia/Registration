@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Registration;
+using Registration.EF;
 namespace Authorization.Windows
 {
     /// <summary>
@@ -20,8 +21,10 @@ namespace Authorization.Windows
     /// </summary>
     public partial class RegistrWindow : Window
     {
+        
         public RegistrWindow()
         {
+
             InitializeComponent();
             
             Paths.PathUsers = @"Accounts\Users.txt";
@@ -51,6 +54,7 @@ namespace Authorization.Windows
                 if (txtLog.Text == "")
                 {
                     MessageBox.Show("Введите логин");
+                    return;
                 }
                 if (txtName.Text == "")
                 {
@@ -65,12 +69,19 @@ namespace Authorization.Windows
                 {
                     MessageBox.Show("Введите пароль");
                 }
-                using (StreamWriter sw = new StreamWriter(Paths.PathUsers, true))
-                {
-                    MessageBox.Show("Вы зарегистрировались");
-                    sw.Write(txtLog.Text + ";" + txtName.Text + ";" + txtNumber.Text + ";" + txtPass.Password + "\n");
-                    sw.Close();
-                }    
+                Ent.Context.Users.Add(new Users
+                { 
+                    
+                    FName = txtName.Text,
+                    IdGender = 1,
+                    IdRole = 1,
+                    Login = txtLog.Text,
+                    Password = txtPass.Password,
+                    Phone = txtNumber.Text,                      
+                }
+                               
+                );
+                Ent.Context.SaveChanges();
            }
             else
             {

@@ -27,7 +27,7 @@ namespace Game.Page
 
         private void btnCLick_Click(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\music.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\music.wav");
             player.Play();
             Page17 page17 = new Page17();
             NavigationService.Navigate(page17);

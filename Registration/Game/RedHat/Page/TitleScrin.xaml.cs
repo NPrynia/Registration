@@ -29,7 +29,7 @@ namespace Game.Page
 
         private void btnNextPage_Click(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\forest.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\forest.wav");
             player.Play();
             Page1 page1 = new  Page1();
             NavigationService.Navigate(page1);

@@ -25,7 +25,7 @@ namespace Game.Page
         {
             InitializeComponent();
 
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\MusicSad.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\MusicSad.wav");
             player.Play(); 
 
 

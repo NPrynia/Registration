@@ -49,7 +49,7 @@ namespace Game.Page
 
         private void btnCLickEnd_Click(object sender, RoutedEventArgs e)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"sounds\Krik.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"Game/RedHat/sounds\Krik.wav");
             player.Play();
             MessageBox.Show("— Это, чтобы тебя съесть!");
             PageEnd pageEnd = new PageEnd();

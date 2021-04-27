@@ -22,6 +22,7 @@ namespace Registration.EF
         public int IdRole { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public string Phone { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Role Role { get; set; }

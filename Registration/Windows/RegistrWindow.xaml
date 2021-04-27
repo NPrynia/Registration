@@ -46,7 +46,7 @@
             FontSize="19" 
             />
         <TextBlock
-            Text=" Name"
+            Text=" FName"
             FontFamily="Microsoft YaHei UI Light"
             Grid.Column="2"
             Grid.Row="2"

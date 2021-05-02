@@ -21,12 +21,16 @@ namespace Authorization.Windows
     /// </summary>
     public partial class RegistrWindow : Window
     {
-        
+   
+
         public RegistrWindow()
         {
 
             InitializeComponent();
-            
+
+            CbGender.ItemsSource = Ent.Context.Gender.ToList();
+            CbGender.DisplayMemberPath = "Gender1";
+
             Paths.PathUsers = @"Accounts\Users.txt";
             Paths.Pathsignup = @"Accounts\signup.txt";
 
@@ -41,7 +45,7 @@ namespace Authorization.Windows
 
         private void btnSignin_Click(object sender, RoutedEventArgs e)
         {
-            SignInWindow signInWindow = new SignInWindow();    
+            SignInWindow signInWindow = new SignInWindow();
             this.Close();
             signInWindow.ShowDialog();
 
@@ -56,38 +60,46 @@ namespace Authorization.Windows
                     MessageBox.Show("Введите логин");
                     return;
                 }
-                if (txtName.Text == "")
-                {
-                    MessageBox.Show("Введите имя");
-                }
+                var user = Ent.Context.Users.ToList().
+                    Where(p => p.Login == txtLog.Text).FirstOrDefault();
 
-                if (txtNumber.Text == "")
+                if (user != null)
                 {
-                    MessageBox.Show("Введите номер ");
+                    {
+                        MessageBox.Show("Введите имя");
+                    }
+
+                    if (txtNumber.Text == "")
+                    {
+                        MessageBox.Show("Введите номер ");
+                    }
+                    if (txtPass.Password == "")
+                    {
+                        MessageBox.Show("Введите пароль");
+                    }
+                    Ent.Context.Users.Add(new Users
+                    {
+
+                        LName = txtName.Text,
+                        IdGender = CbGender.SelectedIndex + 1,
+                        IdRole = 1,
+                        Login = txtLog.Text,
+                        Password = txtPass.Password,
+                        Phone = txtNumber.Text,
+                    }
+
+                    );
+                    MessageBox.Show("Регистрация прошла успешна");
+                    Ent.Context.SaveChanges();
                 }
-                if (txtPass.Password == "")
+                else
                 {
-                    MessageBox.Show("Введите пароль");
+                    MessageBox.Show("Неправильная капча");
+                    Captch.Text = Capthacs.Capcha();
                 }
-                Ent.Context.Users.Add(new Users
-                { 
-                    
-                    FName = txtName.Text,
-                    IdGender = 1,
-                    IdRole = 1,
-                    Login = txtLog.Text,
-                    Password = txtPass.Password,
-                    Phone = txtNumber.Text,                      
-                }
-                               
-                );
-                Ent.Context.SaveChanges();
-           }
-            else
-            {
-                MessageBox.Show("Неправильная капча");
-                Captch.Text = Capthacs.Capcha();
             }
+
+
         }
 
         private void txtNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)

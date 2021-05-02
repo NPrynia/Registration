@@ -29,10 +29,13 @@ namespace Authorization
         public WindowMain()
         {
             InitializeComponent();
+            txtName.Text = User.LName;
+            txtPhone.Text = User.Phone;
+            txtLogin.Text = User.Login;
             var user = Ent.Context.Users.ToList().FirstOrDefault();
             
             
-            
+           
         }
         private void btnGame_Click(object sender, RoutedEventArgs e)
         {
@@ -44,7 +47,7 @@ namespace Authorization
         private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
             WindowUsers windowUsers = new WindowUsers();
-            windowUsers.Show();
+            windowUsers.ShowDialog();
 
         }
     }

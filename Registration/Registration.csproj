@@ -177,14 +177,17 @@
     <Compile Include="Game\RedHat\Path.cs" />
     <Compile Include="Paths.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="Windows\RegistrWindow.xaml.cs">
+      <DependentUpon>RegistrWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowAddUser.xaml.cs">
+      <DependentUpon>WindowAddUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\WindowGames.xaml.cs">
       <DependentUpon>WindowGames.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowMain.xaml.cs">
       <DependentUpon>WindowMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\RegistrWindow.xaml.cs">
-      <DependentUpon>RegistrWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
@@ -288,15 +291,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\RegistrWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowAddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\WindowGames.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\WindowMain.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Windows\RegistrWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -34,9 +34,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FName" Type="nvarchar" MaxLength="70" Nullable="false" />
-          <Property Name="SName" Type="nvarchar" MaxLength="70" Nullable="false" />
-          <Property Name="MName" Type="nvarchar" MaxLength="70" />
+          <Property Name="LName" Type="nvarchar" MaxLength="70" Nullable="false" />
           <Property Name="IdGender" Type="int" Nullable="false" />
           <Property Name="IdRole" Type="int" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="80" Nullable="false" />
@@ -147,9 +145,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
           <Property Name="IdGender" Type="Int32" Nullable="false" />
           <Property Name="IdRole" Type="Int32" Nullable="false" />
           <Property Name="Login" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
@@ -157,6 +152,7 @@
           <NavigationProperty Name="Gender" Relationship="Self.FK_Users_Gender" FromRole="Users" ToRole="Gender" />
           <NavigationProperty Name="Role" Relationship="Self.FK_Users_Role" FromRole="Users" ToRole="Role" />
           <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Users_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
@@ -273,11 +269,9 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Entities.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="LName" ColumnName="LName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="FName" ColumnName="FName" />
-                <ScalarProperty Name="SName" ColumnName="SName" />
-                <ScalarProperty Name="MName" ColumnName="MName" />
                 <ScalarProperty Name="IdGender" ColumnName="IdGender" />
                 <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="Login" ColumnName="Login" />

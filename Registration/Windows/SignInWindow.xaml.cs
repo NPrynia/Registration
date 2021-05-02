@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Registration;
 using Registration.EF;
+using Registration.Windows;
 
 namespace Authorization
 {
@@ -31,9 +32,9 @@ namespace Authorization
         public SignInWindow()
         {
             InitializeComponent();
-           
-           
-            
+            Paths.Pathsignup = @"Accounts\signup.txt";
+
+
             using (StreamReader sr = new StreamReader(Paths.Pathsignup))
             {
                 txtLog.Text = sr.ReadLine();
@@ -63,7 +64,10 @@ namespace Authorization
                     Where(p => p.Login == txtLog.Text && p.Password == txtPass.Password).FirstOrDefault();
                 if (user != null)
                 {
-                    
+                    User.LName = user.LName;
+                    User.Login = user.Login;
+                    User.Phone = user.Phone;
+                    User.IdRole = user.IdRole;
 
                     if (boxSave.IsChecked == true)
                     {
@@ -77,13 +81,19 @@ namespace Authorization
 
                     }
                     WindowMain mainWindowew = new WindowMain();
+                    WindowUsers windowUsers = new WindowUsers();
                     switch (user.IdRole)
                     {
                         case 1:
-                            mainWindowew.btnUsers.Visibility = 0;
+                            mainWindowew.btnUsers.Visibility = Visibility.Visible;
+                            windowUsers.StackPanel.Visibility = Visibility.Visible;
+                            
                             break;
                         case 2:
                             
+                            break;
+                        case 3:
+                            mainWindowew.btnUsers.Visibility = Visibility.Visible;
                             break;
 
                     }

@@ -264,6 +264,25 @@
             Grid.Row="10"
             Click="btnSignin_Click"
             ></Button>
+        <TextBlock
+            Text="Пол:"
+            FontFamily="Microsoft YaHei UI Light"
+            Grid.Column="1"
+            Grid.Row="8"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Foreground="DarkSlateGray"
+            Width="90"
+            FontSize="35"/>
+        <ComboBox
+            Name="CbGender"
+            Grid.Row="8"
+            Grid.Column="1"
+            Width="200"
+            Height="30"
+            HorizontalAlignment="Left"
+            Margin="80,0,0,0"          
+            ></ComboBox>
 
     </Grid>
 </Window>

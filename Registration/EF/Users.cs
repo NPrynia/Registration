@@ -15,14 +15,12 @@ namespace Registration.EF
     public partial class Users
     {
         public int ID { get; set; }
-        public string FName { get; set; }
-        public string SName { get; set; }
-        public string MName { get; set; }
         public int IdGender { get; set; }
         public int IdRole { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
+        public string LName { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Role Role { get; set; }

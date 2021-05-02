@@ -6,32 +6,63 @@
         xmlns:local="clr-namespace:Registration.Windows"
         mc:Ignorable="d"
         Title="WindowUsers" Height="450" Width="800">
-    <Grid Background="Bisque">
+    <Grid Background="MediumAquamarine">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="73*"/>
             <ColumnDefinition Width="721*"/>
         </Grid.ColumnDefinitions>
-
-
-
         <ListView
             Name="LvUsers" 
             Grid.Column="2"
             >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Фамилия" Width="200" DisplayMemberBinding="{Binding FName}"/>
+                    <GridViewColumn Header="Фамилия" Width="200" DisplayMemberBinding="{Binding LName}"/>
                     <GridViewColumn Header="Gender" Width="100" DisplayMemberBinding="{Binding Gender.Gender1}"/>
                     <GridViewColumn Header="Role" Width="100" DisplayMemberBinding="{Binding Role.Role1}"/>
                     <GridViewColumn Header="Login" Width="200" DisplayMemberBinding="{Binding Login}"/>
                     <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Password}"/>
-                    <GridViewColumn Header="Password" Width="200" DisplayMemberBinding="{Binding Phone}"/>
+                    <GridViewColumn Header="Phone" Width="200" DisplayMemberBinding="{Binding Phone}"/>
                 </GridView>
 
             </ListView.View>
 
 
         </ListView>
+        
+        <StackPanel 
+            VerticalAlignment="Center"
+            Orientation="Vertical" 
+            Name="StackPanel"
+            >
 
+            <Button
+            x:Name="btnAdd"
+            Width="60"
+            Height="30"
+            Content="Добавить"
+            Background="White"
+            Click="btnAdd_Click"
+              
+            ></Button>
+            <Button
+            x:Name="btnChange"
+            Width="60"
+            Height="30"
+            Content="Изменить"
+            Background="White"   
+             
+            />
+            <Button
+            x:Name="btnDel"
+                Click="btnDel_Click"
+            Width="60"
+            Height="30"
+            Content="Удалить"
+            Background="White" 
+            />
+
+        </StackPanel>
+       
     </Grid>
 </Window>

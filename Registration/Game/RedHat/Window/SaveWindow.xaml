@@ -21,7 +21,7 @@
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
-        <Image Margin="0,1,2,1" Source="/image/Load.jpg" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="8"/>
+        <Image Margin="0,1,2,1" Source="/Game/RedHat/image/Load.jpg" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="8"/>
 
         <Button
              x:Name="btnBack"

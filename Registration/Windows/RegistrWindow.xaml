@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Authorization.Windows"
         mc:Ignorable="d"
-        Title="RegistrWindow" Height="700" Width="800">
+        Title="RegistrWindow" Height="800" Width="700"
+         AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="319"/>
+            <ColumnDefinition Width="281"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="70*"/>
@@ -28,6 +33,17 @@
             <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
 
+        <Border CornerRadius="12" Grid.RowSpan="11"
+                Grid.ColumnSpan="4">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#eae5c9" Offset="0.0"/>
+                    <GradientStop Color="#6cc6cb" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Border.Background>
+
+        </Border>
         <TextBlock
             Text="Sign on"
             Grid.Column="1"
@@ -35,38 +51,46 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             FontSize="40" 
-            FontFamily="Microsoft YaHei UI Light" Grid.ColumnSpan="2" ></TextBlock>
+              FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
+            Grid.ColumnSpan="2" Height="48" Margin="240,13,234,12" Width="126" ></TextBlock>
         <TextBlock
             Text=" Login"
-            FontFamily="Microsoft YaHei UI Light"
             Grid.Column="1"
+              FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Row="2"
             Foreground="DarkSlateGray"
             VerticalAlignment="Bottom"
-            FontSize="19" 
+            FontSize="19" Height="23" 
             />
         <TextBlock
             Text=" FName"
-            FontFamily="Microsoft YaHei UI Light"
+            FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Column="2"
             Grid.Row="2"
             VerticalAlignment="Bottom"
             Foreground="DarkSlateGray"
-            FontSize="19"
+            FontSize="19" Height="23"
             />
         <TextBlock
             Text=" Phone"
-            FontFamily="Microsoft YaHei UI Light"
+             FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Column="2"
             Grid.Row="4"
             VerticalAlignment="Bottom"
             FontSize="19"
-            Foreground="DarkSlateGray"
+            Foreground="DarkSlateGray" Height="23"
             />
         <TextBox
             x:Name="txtLog"
             Grid.Row="3"
-            Height="50"
             Width="280"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
@@ -74,14 +98,14 @@
             Grid.Column="1"
             BorderBrush="Black"
             Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light" 
-            Style="{DynamicResource StyleTxtBlc}" 
+             FontFamily="helvetica"
+            FontWeight="Light"
+            Style="{DynamicResource StyleTxtBlc}" Margin="0,11,0,12" 
             
             />
         <TextBox
             x:Name="txtName"
             Grid.Row="3"
-            Height="50"
             Width="280"
             VerticalContentAlignment="Center"
             HorizontalAlignment="Left"
@@ -89,13 +113,13 @@
             Grid.Column="2"
             BorderBrush="Black"
             Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light"
-             Style="{DynamicResource StyleTxtBlc}" 
+           FontFamily="helvetica"
+            FontWeight="Light"
+             Style="{DynamicResource StyleTxtBlc}" Margin="0,11,0,12" 
             />
         <PasswordBox
             Name="txtPass"
             Grid.Row="5"
-            Height="50"
             Grid.Column="1"
             Width="280"
             VerticalContentAlignment="Center"
@@ -103,14 +127,14 @@
             FontSize="24"
             BorderBrush="Black"
             Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light" 
-            Style="{DynamicResource PasswordBoxStyle1}"          
+           FontFamily="helvetica"
+            FontWeight="Light"
+            Style="{DynamicResource PasswordBoxStyle1}" Margin="0,11,0,12"          
             />
         <TextBox
             x:Name="txtNumber"
             MaxLength="11"
             Grid.Row="5"
-            Height="50"
             Width="280"
             VerticalContentAlignment="Center"
             HorizontalAlignment="Left"
@@ -119,14 +143,14 @@
             BorderBrush="Black"
             Background="#FFEEEEEE"
             PreviewTextInput="txtNumber_PreviewTextInput"
-            FontFamily="Microsoft YaHei UI Light"
-            Style="{DynamicResource StyleTxtBlc}" 
+            FontFamily="helvetica"
+            FontWeight="Light"
+            Style="{DynamicResource StyleTxtBlc}" Margin="0,11,0,12" 
             
             />
         <PasswordBox
             Name="txtPass2"
             Grid.Row="7"
-            Height="50"
             Grid.Column="1"
             Width="280"
             VerticalContentAlignment="Center"
@@ -134,35 +158,42 @@
             FontSize="24"
             BorderBrush="Black"
             Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light" 
-            Style="{DynamicResource PasswordBoxStyle1}"          
+            FontFamily="helvetica"
+            FontWeight="Light" 
+            Style="{DynamicResource PasswordBoxStyle1}" Margin="0,12,0,11"          
             />
         <TextBlock
-            Text=" Password"
-            FontFamily="Microsoft YaHei UI Light"
+            Text=" Password" 
+            FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Column="1"
             Grid.Row="4"
             Foreground="DarkSlateGray"
             VerticalAlignment="Bottom"
-            FontSize="19" 
+            FontSize="19" Height="23" 
             />
         <TextBlock
             Text=" Re-Password"
-            FontFamily="Microsoft YaHei UI Light"
+          FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Column="1"
             Grid.Row="6"
             Foreground="DarkSlateGray"
             VerticalAlignment="Bottom"
-            FontSize="19" 
+            FontSize="19" Height="23" 
             />
         <TextBlock
             Text=" Capha"
-            FontFamily="Microsoft YaHei UI Light"
+              FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Column="2"
             Grid.Row="6"
             Foreground="DarkSlateGray"
             VerticalAlignment="Bottom"
-            FontSize="19" 
+            FontSize="19" Height="23" 
             />
         <TextBlock
             x:Name="Captch"
@@ -172,18 +203,16 @@
             Grid.Row="7"        
             Width="190"
             HorizontalAlignment="Left"
-            Height="40"
-            TextAlignment="Center" 
-            ></TextBlock>
+            TextAlignment="Center" Margin="0,16,0,17" 
+            />
         <Border
             Name="brdCapth"
             Grid.Column="2"
             Grid.Row="7"
             Width="190"
             HorizontalAlignment="Left"
-            Height="40"
             Opacity="0.8"
-            CornerRadius="10"
+            CornerRadius="10" Margin="0,16,0,17"
             >
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.6,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -193,13 +222,16 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
+
+        <Image Source="/Windows/img/logo.png" Grid.Column="1"
+               Grid.ColumnSpan="2" Margin="0,0,0,46" Grid.RowSpan="2"/>
+
         <Button         
             x:Name="btnCapth"
             Grid.Row="7"
             Grid.Column="2"
             HorizontalAlignment="Right"
             Width="70"
-            Height="40"
             FontSize="25"
             BorderBrush="Black"
             Background="White"
@@ -207,7 +239,7 @@
             VerticalContentAlignment="Stretch"
             Style="{DynamicResource ButtonStyle1}"
             Click="btnCapth_Click"
-            Margin="0,0,19.8,0" 
+            Margin="0,16,20,17" 
               
             >
             <Button.RenderTransform>
@@ -220,9 +252,8 @@
             </Button.RenderTransform>
         </Button>
         <TextBox          
-            x:Name="txtCapth"
+            x:Name="txtCaptch"
             Grid.Row="8"
-            Height="40"
             Width="190"
             Grid.Column="2"
             VerticalContentAlignment="Center"
@@ -230,8 +261,10 @@
             FontSize="24"
             BorderBrush="Black"
             Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light" 
-             Style="{DynamicResource StyleTxtBlc}" TextChanged="txtCapth_TextChanged" 
+           FontFamily="helvetica"
+            FontWeight="Light" 
+             Style="{DynamicResource StyleTxtBlc}"         
+            Margin="0,17,0,16" 
             />
         <Button
             Name="btnReg"
@@ -248,7 +281,7 @@
             FontSize="20" 
             Click="btnReg_Click"
             Grid.ColumnSpan="2" 
-            Style="{DynamicResource ButtonStyle1}" 
+            Style="{DynamicResource ButtonStyle1}" Margin="214,12,206,11" 
             ></Button>
         <Button
             Name="btnSignin"
@@ -257,32 +290,32 @@
             Grid.ColumnSpan="2"
             HorizontalAlignment="Center"
             Width="200"
-            Height="20"
-            Background="White"
-            BorderBrush="White"
+            Background="Transparent"
+            BorderThickness="0"
             Foreground="Blue"
             Grid.Row="10"
-            Click="btnSignin_Click"
-            ></Button>
+            Click="btnSignin_Click" Margin="204,27,196,26"
+            />
         <TextBlock
-            Text="Пол:"
-            FontFamily="Microsoft YaHei UI Light"
+            Text="Gender:"
+              FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
             Grid.Column="1"
             Grid.Row="8"
             VerticalAlignment="Center"
             HorizontalAlignment="Left"
             Foreground="DarkSlateGray"
             Width="90"
-            FontSize="35"/>
+            FontSize="23" Height="28" Margin="0,23,0,22"/>
         <ComboBox
             Name="CbGender"
             Grid.Row="8"
             Grid.Column="1"
             Width="200"
-            Height="30"
             HorizontalAlignment="Left"
-            Margin="80,0,0,0"          
-            ></ComboBox>
+            Margin="80,21,0,22"          
+            />
 
     </Grid>
 </Window>

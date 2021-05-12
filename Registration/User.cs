@@ -13,7 +13,7 @@ namespace Registration
         public static string Login { get; set; }
         public static string Password { get; set; }
         public static int IdRole { get; set; }
-        public static string IdGEnder { get; set; }
+        public static int IdGEnder { get; set; }
         public static string Phone { get; set; }
     }
 }

@@ -56,6 +56,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.8.0\lib\net47\MahApps.Metro.IconPacks.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0c0d510f9915137a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.4.8.0\lib\net47\MahApps.Metro.IconPacks.Material.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -175,6 +181,15 @@
       <DependentUpon>TitleScrin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Game\RedHat\Path.cs" />
+    <Compile Include="PageMain\PageGame.xaml.cs">
+      <DependentUpon>PageGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain\PageProfile.xaml.cs">
+      <DependentUpon>PageProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageMain\PageUsers.xaml.cs">
+      <DependentUpon>PageUsers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paths.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Windows\RegistrWindow.xaml.cs">
@@ -182,9 +197,6 @@
     </Compile>
     <Compile Include="Windows\WindowAddUser.xaml.cs">
       <DependentUpon>WindowAddUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\WindowGames.xaml.cs">
-      <DependentUpon>WindowGames.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowMain.xaml.cs">
       <DependentUpon>WindowMain.xaml</DependentUpon>
@@ -207,9 +219,6 @@
     </Compile>
     <Compile Include="Game\RedHat\Window\SaveWindow.xaml.cs">
       <DependentUpon>SaveWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\WindowUsers.xaml.cs">
-      <DependentUpon>WindowUsers.xaml</DependentUpon>
     </Compile>
     <Page Include="Game\RedHat\Page\LoadPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -291,15 +300,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PageMain\PageGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageMain\PageProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageMain\PageUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\RegistrWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\WindowAddUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\WindowGames.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,10 +344,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Windows\WindowUsers.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -357,6 +370,7 @@
     <None Include="EF\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -384,6 +398,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Save1.txt</LastGenOutput>
     </Content>
+    <Resource Include="Windows\img\mountains.jpg" />
+    <Resource Include="Windows\img\woman.png" />
+    <Resource Include="Windows\img\man.png" />
+    <Resource Include="Windows\img\logoWhite.png" />
+    <Resource Include="Windows\img\logo.png" />
     <Resource Include="Game\RedHat\Save1.txt">
       <DependentUpon>Save1.tt</DependentUpon>
       <AutoGen>True</AutoGen>

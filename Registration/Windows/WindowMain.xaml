@@ -3,104 +3,122 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Authorization"
+        xmlns:local="clr-namespace:Authorization" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="500" Width="900"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        
+        >
     <Grid>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="186*"/>
-            <ColumnDefinition Width="107*"/>
-            <ColumnDefinition Width="500*"/>
+            <ColumnDefinition Width="4*"/>
+
+            <ColumnDefinition Width="21*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="229*"/>
+
         </Grid.RowDefinitions>
-        <TextBlock
-            Text="Добро Пожаловать"
-            FontSize="30"
+
+
+
+
+        <Border
+           
+            Background="#FF36344D"
+           
+            Grid.RowSpan="2" 
+            Grid.ColumnSpan="2">
+        </Border>
+
+        <Frame
+            
+            NavigationUIVisibility="Hidden"
+            Name="FrameMain" 
+            Grid.Column="1"
             Grid.Row="0"
-            HorizontalAlignment="Center" Grid.Column="2" Margin="98.4,0,134.6,49.2" Grid.RowSpan="2" Width="267"            
-            />
-        <TextBlock
-            Text="Name:"
-            FontSize="20"
-             FontFamily="Microsoft YaHei UI Light"
-            Width="60"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Grid.Row="1" Grid.Column="1" Margin="0,12.4,11.6,11.2" Height="26" 
-            ></TextBlock>
-        <TextBlock
-            Text="Login:"
-            FontSize="20"
-            FontFamily="Microsoft YaHei UI Light"
-            Width="60"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"
-            Grid.Row="2" Grid.Column="1" Margin="0,11.8,11.6,11.8" Height="26" 
-            ></TextBlock>
-        <TextBlock
-            Text="Number:"
-            FontSize="20"
-            FontFamily="Microsoft YaHei UI Light"
-            Width="80"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Right"          
-            Grid.Row="3" Margin="0,12.2,11.6,11.4" Grid.Column="1" Height="26"
-            />
-        <TextBlock
-            x:Name="txtName"
-            VerticalAlignment="Center"
-            FontSize="19"
-            Grid.Row="1"
-            Grid.Column="1" Margin="98.6,12.4,-0.4,11.2" Grid.ColumnSpan="2" Height="26"
+            Grid.RowSpan="2"
+            Background="White"
             
-            ></TextBlock>
-        <TextBlock
-            x:Name="txtLogin"
-            Grid.Row="2"
-            VerticalAlignment="Center"
-            FontSize="19"
-            Grid.Column="1" Margin="98.6,11.8,-0.4,11.8" Grid.ColumnSpan="2" Height="26"
-            
-            ></TextBlock>
-        <TextBlock
-            x:Name="txtPhone"
-            Grid.Row="3"
-            VerticalAlignment="Center"
-            FontSize="19"
-            Grid.Column="1" Margin="98.6,12.2,-0.4,11.4" Grid.ColumnSpan="2" Height="26"        
-            ></TextBlock>
+          />
+
+
+        <Border
+            Background="#FF1F1E2E"
+            />
+        <Image Source="/Windows/img/logoWhite.png" />
+
+
         <StackPanel
-            Grid.Row="0"
-            Grid.RowSpan="9"
-            Background="Gray"
-            VerticalAlignment="Center"
+            Grid.Row="1"
             >
-            <Button
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button
+            x:Name="btnProfile"
+            Grid.Row="4"
+            Height="30"
+                FontSize="15"
+                BorderThickness="0"
+            Content="Профиль"
+            Foreground="White"
+            Background="Transparent"
+           Click="btnProfile_Click"
+                  FontWeight="Light"
+                FontFamily="helvetica"
+            />
+                <iconPacks:PackIconMaterial Kind="Account" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White" Width="26" Margin="5,0,0,0"   Height="20"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button
             x:Name="btnGame"
             Grid.Row="4"
             Height="30"
+                FontSize="15"
+                BorderThickness="0"
             Content="Игры"
-            Background="White"
+            Foreground="White"
+            Background="Transparent"
             Click="btnGame_Click" 
+                  FontWeight="Light"
+                FontFamily="helvetica"
             />
-            <Button
+                <iconPacks:PackIconMaterial Kind="YoutubeGaming"
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White" Width="26" Margin="5,0,0,0"  Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button
             x:Name="btnUsers"
             Grid.Row="3"
             VerticalAlignment="Top"
-            Height="50"
-            
-            Content="Все пользователи"
-            Background="Aqua"
+            Height="30"
+            Foreground="White"
+                BorderThickness="0"
+            Content="пользователи"
+            Background="Transparent"
             Click="btnUsers_Click"
+                  FontWeight="Light"
+                FontFamily="helvetica"
+                FontSize="15"
              ></Button>
+                <iconPacks:PackIconMaterial Kind="PlaylistEdit" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White" Width="26" Margin="5,0,0,0"  Height="20"/>
+            </StackPanel>
         </StackPanel>
-      
+
+
 
     </Grid>
 </Window>

@@ -21,6 +21,7 @@ namespace Registration.EF
         public string Password { get; set; }
         public string Phone { get; set; }
         public string LName { get; set; }
+        public byte[] Photo { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Role Role { get; set; }

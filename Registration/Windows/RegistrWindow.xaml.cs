@@ -53,30 +53,47 @@ namespace Authorization.Windows
 
         private void btnReg_Click(object sender, RoutedEventArgs e)
         {
-            if (Captch.Text == txtCapth.Text)
+            if (txtLog.Text == "")
             {
-                if (txtLog.Text == "")
-                {
-                    MessageBox.Show("Введите логин");
-                    return;
-                }
+                MessageBox.Show("Введите логин");
+                return;
+            }
+            if (txtName.Text == "")
+            {
+                MessageBox.Show("Введите имя");
+                return;
+            }
+            if (txtNumber.Text == "")
+            {
+                MessageBox.Show("Введите номер ");
+                return;
+            }
+            if (txtPass.Password == "")
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+            if(CbGender.SelectedIndex == -1 )
+            {
+                MessageBox.Show("Выберите гендер ");
+                return;
+            }
+            if (Captch.Text == txtCaptch.Text)
+            {
+
+
+
+               
+
                 var user = Ent.Context.Users.ToList().
                     Where(p => p.Login == txtLog.Text).FirstOrDefault();
 
                 if (user != null)
                 {
-                    {
-                        MessageBox.Show("Введите имя");
-                    }
-
-                    if (txtNumber.Text == "")
-                    {
-                        MessageBox.Show("Введите номер ");
-                    }
-                    if (txtPass.Password == "")
-                    {
-                        MessageBox.Show("Введите пароль");
-                    }
+                    MessageBox.Show("Логин занят");
+                }
+                else
+                {
                     Ent.Context.Users.Add(new Users
                     {
 
@@ -88,16 +105,18 @@ namespace Authorization.Windows
                         Phone = txtNumber.Text,
                     }
 
-                    );
+                        );
                     MessageBox.Show("Регистрация прошла успешна");
                     Ent.Context.SaveChanges();
                 }
-                else
-                {
-                    MessageBox.Show("Неправильная капча");
-                    Captch.Text = Capthacs.Capcha();
-                }
             }
+
+            else
+            {
+                MessageBox.Show("Неправильная капча");
+                Captch.Text = Capthacs.Capcha();
+            }
+            
 
 
         }
@@ -113,6 +132,13 @@ namespace Authorization.Windows
 
         private void txtCapth_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
 
         }
     }

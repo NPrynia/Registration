@@ -3,161 +3,218 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Authorization"
+        xmlns:local="clr-namespace:Authorization" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="600"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        Title="MainWindow" Height="550" Width="480"
+        
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+       MouseDown="Window_MouseDown"
+        >
+    <Grid >
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
+            <RowDefinition Height="128*" />
+            <RowDefinition Height="147*" />
         </Grid.RowDefinitions>
 
-        <TextBlock
-            Text="Sign in"
-            Grid.Column="1"
-            Grid.Row="1"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            FontSize="40" 
-            FontFamily="Microsoft YaHei UI Light" 
-            ></TextBlock>
-        <TextBlock
-            Text="Login"
-            FontFamily="Microsoft YaHei UI Light"
-            Grid.Column="1"
-            Grid.Row="2"
-            VerticalAlignment="Bottom"
-            FontSize="19" 
-            />
-        <TextBox
-            x:Name="txtLog"
-            Grid.Row="3"
-            Height="50"
-            VerticalContentAlignment="Center"
-            FontSize="24"
-            Grid.Column="1"
-            BorderBrush="Black"
-            Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light"
-            />
-        <TextBlock
-            Text="Password"
-            FontFamily="Microsoft YaHei UI Light"
-            Grid.Column="1"
-            Grid.Row="4"
-            VerticalAlignment="Bottom"
-            FontSize="19"
-            />
-        <PasswordBox
-            Name="txtPass"
-            Grid.Row="5"
-            Height="50"
-            Grid.Column="1"
-            VerticalContentAlignment="Center"
-            FontSize="24"
-            BorderBrush="Black"
-            Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light" 
-            />
-
-        <TextBlock
-            Visibility="Hidden"
-            x:Name="Captch"
-            FontFamily="Microsoft YaHei UI Light"
-            FontSize="30"
-            Grid.Column="1"
-            Grid.Row="6"        
-            Width="190"
-            HorizontalAlignment="Left"
-            Height="40"
-            TextAlignment="Center" Margin="0,15"
-            ></TextBlock>
-        <Border
-            Visibility="Hidden"
-            Name="brdCapth"
-            Grid.Column="1"
-            Grid.Row="6"
-            Width="190"
-            HorizontalAlignment="Left"
-            Height="40" Opacity="0.8" Margin="0,15"
-            
-            >
+        <Border CornerRadius="12" Grid.RowSpan="2">
             <Border.Background>
-                <LinearGradientBrush EndPoint="0.6,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="Red" Offset="1"/>
-                    <GradientStop Color="#FF58FF33"/>
-                    <GradientStop Color="#FFFFE90A" Offset="0.541"/>
+                <LinearGradientBrush>
+                    <GradientStop Color="#eae5c9" Offset="0.0"/>
+                    <GradientStop Color="#6cc6cb" Offset="1"/>
+
                 </LinearGradientBrush>
             </Border.Background>
+
         </Border>
-        <Button
-            Visibility="Hidden"
-            x:Name="btnCapth"
-            Grid.Row="6"
-            Grid.Column="1"
-            HorizontalAlignment="Left"
-            Width="99"
-            Height="40"
-            FontSize="16"
-            BorderBrush="Black"
-            Background="White"
-            Content=" ⟳ Обновить" 
-            Click="btnCapth_Click" 
-            Margin="199,15,0,15" 
-            
-            ></Button>
-        <TextBox
-            Visibility="Hidden"
-            x:Name="txtCapth"
-            Grid.Row="7"
-            Height="50"
-            Width="200"
-            Grid.Column="1"
-            VerticalContentAlignment="Center"
-            HorizontalAlignment="Left"
-            FontSize="24"
-            BorderBrush="Black"
-            Background="#FFEEEEEE"
-            FontFamily="Microsoft YaHei UI Light" Margin="0,10"
+        <StackPanel VerticalAlignment="Top" Height="143">
+            <Image Source="/Windows/img/logo.png"
+             Width="100"
+             Height="100"
+           
+             />
+            <TextBlock
+                Text="Sign In"
+                FontSize="36"
+                FontWeight="Light"
+                FontFamily="helvetica"
+                Foreground="Black"
+                HorizontalAlignment="Center"
+                ></TextBlock>
+        </StackPanel >
+
+        <StackPanel Grid.Row="1" >
+            <!-- LOGIN -->
+            <StackPanel  VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBox
+            x:Name="txtLog"    
+            Text="Login"
+          
+            Width="250"
+            BorderThickness="0"
+            FontSize="28"
+            FontFamily="helvetica"
+            FontWeight="Light"
+            Opacity="0.7"
+            Background="Transparent"
+            Margin="102,0,0,01"        
+            GotFocus="txtLog_GotFocus"       
             />
-        <Button
-            Name="btnReg"
-            Grid.Column="1"
-            Width="180"
-            Height="50"
-            Grid.Row="8"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Content="Sign in"
-            FontFamily="Microsoft YaHei UI Light"
-            Background="#FF42AEBF"
-            Foreground="White"
-            FontSize="20" 
-            Click="btnReg_Click"
-            ></Button>
-        <CheckBox
+                <iconPacks:PackIconMaterial Kind="Account" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="Black" Width="26" Opacity="0.7" Height="20"/>
+
+            </StackPanel>
+            <Border
+                        Height="2"
+                        Background="Black"
+                        Opacity="0.7"
+               
+                Width="270"/>
+
+            <!-- Password -->
+            <StackPanel Grid.Row="1" Margin="0,20,0,0" >
+                <StackPanel  VerticalAlignment="Top" Orientation="Horizontal" >
+                    <PasswordBox
+            Name="txtPass"
+            Password="45546"
+            FontWeight="Light"
+            Width="250"
+            BorderThickness="0"
+            FontSize="28"
+            FontFamily="helvetica"
+            Background="Transparent"
+            Opacity="0.7"
+            Margin="102,0,0,0"    
+            />
+                    <iconPacks:PackIconMaterial Kind="FormTextboxPassword" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="Black" Width="26" Opacity="0.7" Height="20"/>
+
+                </StackPanel>
+
+                <Border
+                        Height="2"
+                        Background="Black"
+                        Opacity="0.7"
+               
+                Width="270"/> 
+                
+                
+                
+                <StackPanel Margin="0,5,0,0">
+                    <CheckBox
             x:Name="boxSave"
-            Grid.Row="8"
-            Content="Запомнить"
-            Grid.Column="1"
-            Width="200"
-            Height="40"
-            HorizontalAlignment="Right"
-            ></CheckBox>
+            Grid.Row="0"
+            Content="Remember" 
+            FontWeight="Light"
+            BorderThickness="0"
+            FontFamily="helvetica"
+            Opacity="0.7"
+            Margin="102,0,0,0"  
+            />
+                </StackPanel>
+                
+                
+                <!-- Captcha -->
+                <StackPanel  VerticalAlignment="Top" Orientation="Horizontal" Margin="0,20,0,0">
+                    <TextBox
+            
+            x:Name="txtCaptch" 
+            FontWeight="Light"
+            GotFocus="Captch_GotFocus"
+            Width="108"
+            Text="Captch"
+            BorderThickness="0"
+            FontSize="28"
+            FontFamily="helvetica"
+            Background="Transparent"
+            Opacity="0.7"
+            Margin="102,0,0,0" 
+            Visibility="Hidden"
+            />
+                    <TextBlock
+            x:Name="Captch"                       
+            Width="84"     
+                        Visibility="Hidden"
+            FontSize="26"
+            Text="Captch"   
+            FontFamily="helvetica"       
+            Margin="20,0,0,0"
+                ></TextBlock>
+                    <Button
+            x:Name="btnCapth"
+            FontSize="20"
+            BorderThickness="0"
+            Background="Transparent"
+            Content="⟳" 
+            Click="btnCapth_Click"        
+            Visibility="Hidden"
+                        />
+                    <StackPanel>
+                        
+                    </StackPanel>
+                </StackPanel>
+                <Border
+                    x:Name="brdCapth"
+                    Visibility="Hidden"
+                        Height="2"
+                        Background="Black"
+                        Opacity="0.7" Margin="105,0,281,0"/>
+                
+                <!-- Button -->
+                <StackPanel  Margin="70,20,0,0" Orientation="Horizontal">
+                    
+                    <Button
+            Name="btnLog"
+            Width="170"
+            FontWeight="Light"
+            FontFamily="helvetica"
+            Height="50"           
+            Content="SIGN IN"
+            Background="Transparent"
+            Foreground="Black"
+            BorderBrush="Black"
+            FontSize="25" 
+            Click="btnLog_Click"
+            BorderThickness="2"
+            Margin="0,0,20,0"
+                        Style="{DynamicResource ButtonStyle2}"
+            ></Button>
+                    <Button
+            Name="btnReg"
+            Width="170"
+            FontWeight="Light"
+            FontFamily="helvetica"
+            Height="50"           
+            Content="REGISTER"
+            Background="Transparent"
+            Foreground="Black"
+            BorderBrush="Black"
+            FontSize="25"
+            Style="{DynamicResource ButtonStyle2}"
+             BorderThickness="2"
+                        Click="btnReg_Click"
+            ></Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        
+        <Image
+            x:Name="imgcapth"
+            Source="/Windows/capcha.png" 
+       Opacity="0.4" 
+            Visibility="Hidden"
+          Stretch="None"
+       Margin="228,130,168,130" 
+       Grid.Row="1" />
+
+       
+
 
     </Grid>
 </Window>

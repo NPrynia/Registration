@@ -16,6 +16,7 @@ using Registration;
 using Game;
 using Registration.Windows;
 using Registration.EF;
+using Registration.PageMain;
 
 
 namespace Authorization
@@ -28,10 +29,9 @@ namespace Authorization
         
         public WindowMain()
         {
+           
             InitializeComponent();
-            txtName.Text = User.LName;
-            txtPhone.Text = User.Phone;
-            txtLogin.Text = User.Login;
+            FrameMain.Navigate(new PageProfile());
             var user = Ent.Context.Users.ToList().FirstOrDefault();
             
             
@@ -39,16 +39,38 @@ namespace Authorization
         }
         private void btnGame_Click(object sender, RoutedEventArgs e)
         {
-            WindowGames windowGames = new WindowGames();
-            this.Close();
-            windowGames.Show();
+            FrameMain.Navigate(new PageGame());
+            var user = Ent.Context.Users.ToList().FirstOrDefault();
+
         }
 
         private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
-            WindowUsers windowUsers = new WindowUsers();
-            windowUsers.ShowDialog();
+            FrameMain.Navigate(new PageUsers());
+            var user = Ent.Context.Users.ToList().FirstOrDefault();
 
         }
+
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            FrameMain.Navigate(new PageProfile());
+            var user = Ent.Context.Users.ToList().FirstOrDefault();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+      
+   
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+           
+            Environment.Exit(0);
+        }
+       
+       
     }
 }

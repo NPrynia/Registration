@@ -40,6 +40,7 @@
           <Property Name="Login" Type="nvarchar" MaxLength="80" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="80" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="15" />
+          <Property Name="Photo" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Users_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
@@ -153,6 +154,7 @@
           <NavigationProperty Name="Role" Relationship="Self.FK_Users_Role" FromRole="Users" ToRole="Role" />
           <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="LName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_Users_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
@@ -269,6 +271,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Entities.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="LName" ColumnName="LName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

@@ -25,6 +25,7 @@
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
         <TextBlock
+            Name="title"
             Text="Добавление пользователей"
             Grid.Column="1"
             FontSize="25"
@@ -162,7 +163,7 @@
             ></ComboBox>
         <Button
             Name="btnAdd"
-            Content="Добавить"
+            Content="Сохранить"
             Grid.Row="7"
             Grid.RowSpan="2"
             Height="50"
@@ -170,6 +171,22 @@
             Width="100"
             Click="btnAdd_Click"
             ></Button>
+        <StackPanel Grid.Column="3"
+                    Grid.Row="1" Grid.RowSpan="6">
+            <Image 
+                Name="imgUser"
+                Source="/Windows/img/logo.png" Height="139" />
+
+            <Button
+                Content="Выбрать изображение"
+                Name="btnImg"
+                Background="Transparent"
+                Width="140"
+                Click="btnImg_Click"
+                
+                ></Button>
+            
+        </StackPanel>
 
 
 

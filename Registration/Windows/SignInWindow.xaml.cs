@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Registration;
 using Registration.EF;
 using Registration.Windows;
+using Authorization.Windows;
 
 namespace Authorization
 {
@@ -51,23 +52,25 @@ namespace Authorization
         
         }
 
-        private void btnReg_Click(object sender, RoutedEventArgs e)
+        private void btnLog_Click(object sender, RoutedEventArgs e)
         {
-            txtCapth.Text = "";
-            if (txtCapth.Text == Captch.Text)
+           
+            if (Captch.Text == txtCaptch.Text)
             {
                 
                 a++;
-
+                
                 
                 var user = Ent.Context.Users.ToList().
                     Where(p => p.Login == txtLog.Text && p.Password == txtPass.Password).FirstOrDefault();
-                if (user != null)
+                if (user != null )
                 {
                     User.LName = user.LName;
                     User.Login = user.Login;
+                    User.Password = user.Password;
                     User.Phone = user.Phone;
                     User.IdRole = user.IdRole;
+                    User.IdGEnder = user.IdGender;
 
                     if (boxSave.IsChecked == true)
                     {
@@ -81,12 +84,11 @@ namespace Authorization
 
                     }
                     WindowMain mainWindowew = new WindowMain();
-                    WindowUsers windowUsers = new WindowUsers();
                     switch (user.IdRole)
                     {
                         case 1:
                             mainWindowew.btnUsers.Visibility = Visibility.Visible;
-                            windowUsers.StackPanel.Visibility = Visibility.Visible;
+                          
                             
                             break;
                         case 2:
@@ -107,11 +109,11 @@ namespace Authorization
                     MessageBox.Show("Неверные данные");                   
                     if (a > 2)
                     {
-                        
                         Captch.Text = Capthacs.Capcha();
                         Captch.Visibility = 0;
-                        txtCapth.Visibility = 0;
+                        txtCaptch.Visibility = 0;
                         btnCapth.Visibility = 0;
+                        imgcapth.Visibility = 0;
                         brdCapth.Visibility = 0;
                     }
                 }
@@ -124,7 +126,34 @@ namespace Authorization
            
            
         }
+
         
 
+        private void txtLog_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtLog.Text = "";
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void Captch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtCaptch.Text = "";
+        }
+
+        private void btnReg_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrWindow registrWindow = new RegistrWindow();
+            this.Close();
+            registrWindow.Show();
+
+
+
+
+        }
     }
 }

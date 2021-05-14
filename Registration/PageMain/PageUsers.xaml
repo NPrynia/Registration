@@ -9,13 +9,17 @@
       Title="PageUsers">
 
     <Grid Background="#FF1F1E2E" Margin="-2,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="427*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="73*"/>
             <ColumnDefinition Width="721*"/>
         </Grid.ColumnDefinitions>
         <ListView
             Name="LvUsers" 
-            Grid.Column="2"
+            Grid.Column="1" Grid.Row="2"
             >
             <ListView.View>
                 <GridView>
@@ -31,11 +35,54 @@
 
 
         </ListView>
+        <StackPanel  Grid.Column="1" Orientation="Horizontal">
+            <TextBlock
+                Text="Поиск по Фамилии:"
+                Foreground="White"
+                VerticalAlignment="Center"
+                ></TextBlock>
+            <TextBox
+                Name="LnameSearch"
+                Background="White"
+                Width="150"
+                Height="20"
+                Margin="5 0 0 0"
+                TextChanged="LnameSearch_TextChanged"
+                ></TextBox>
+            <TextBlock
+                Text="Выборка по роле:"
+                Foreground="White"
+                VerticalAlignment="Center"
+                Margin="10 0 0 0"
+                ></TextBlock>
+            <ComboBox
+                Name="cbSortRole"
+                Width="100"
+                Margin="5 0 0 0"
+                Height="20"
+                SelectionChanged="cbSortRole_SelectionChanged"
+                
+                ></ComboBox>
+            <TextBlock
+                Text="Выборка по гендеру:"
+                Foreground="White"
+                VerticalAlignment="Center"
+                Margin="10 0 0 0"
+                ></TextBlock>
+            <ComboBox
+                Name="cbSortGender"
+                Width="70"
+                Margin="5 0 0 0"
+                Height="20"
+                SelectionChanged="cbSortGender_SelectionChanged"
+                ></ComboBox>
+
+        </StackPanel>
 
         <StackPanel 
             VerticalAlignment="Center"
             Orientation="Vertical" 
-            Name="StackPanel"
+            Name="StackPanel" Margin="0,145,0,178" Grid.Row="1" Height="104"
             >
 
             <Button

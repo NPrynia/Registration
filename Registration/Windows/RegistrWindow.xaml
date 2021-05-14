@@ -239,7 +239,7 @@
             VerticalContentAlignment="Stretch"
             Style="{DynamicResource ButtonStyle1}"
             Click="btnCapth_Click"
-            Margin="0,16,20,17" 
+            Margin="0,16,15,17" 
               
             >
             <Button.RenderTransform>
